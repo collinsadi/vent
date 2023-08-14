@@ -12,10 +12,11 @@ body{
     position: fixed;
     left: 0;
     top: 0;
-    background: linear-gradient(to bottom, var(--primary-color), var(--white));
+    background: linear-gradient(to bottom right, var(--primary-color), var(--black));
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .page-container-inner{
@@ -45,10 +46,24 @@ body{
 
 .page-cta button{
 
-    padding: 20px;
+    padding: 15px;
+    width: 300px;
+    max-width: 100%;
     background-color: var(--white);
     color: var(--black);
     border: 0;
     outline: 0;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+@media all and (max-width: 680px) {
+    /* your content here */
+
+    .page-description{
+
+        padding: 15px;
+    }
 }

@@ -5,5 +5,13 @@ router.get("/", (request, response) => {
     
     response.render("index")
 })
+router.get("/join", (request, response) => {
+    
+    response.render("join")
+})
+router.get("/me/chats", (request, response) => {
+    
+    response.render("chat")
+})
 
 module.exports = router

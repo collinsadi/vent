@@ -37,6 +37,8 @@ const createUser = async (request, response) => {
 
         await user.save()
 
+        response.cookie("auth",token,{httpOnly:true})
+
         response.status(201).json({status: true, message:"User Created Sucessfully", user})
 
 
@@ -81,6 +83,8 @@ const loginUser = async (request, response) => {
             
             return response.status(401).json({status:false, message:"Invalid Credentials"})
         }
+
+          response.cookie("auth",user.token,{httpOnly:true})
 
         response.status(200).json({status:true, message:"Login Sucessful", user})
 

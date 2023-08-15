@@ -21,11 +21,11 @@ const newMessage = async (request, response) => {
     }
 
     const newmessage = await Message.create({ from, to, message })
-    const messages = await Message.find({ from, to })
+    const messages = await Message.find().or([{to:from},{from}])
 
     const messageId = newmessage._id
 
- const chatExists = await Chat.findOne({from, to })
+ const chatExists = await Chat.findOne().or([{to:from},{from}])
 
     if (chatExists) {
       

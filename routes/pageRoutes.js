@@ -11,7 +11,15 @@ router.get("/join", (request, response) => {
 })
 router.get("/me/chats", (request, response) => {
     
-    response.render("chat")
+     response.render("chat")
+
+    
+})
+
+router.get("/me/chats/:id", (request, response) => {
+
+    response.render("conversation")
+    
 })
 
 module.exports = router

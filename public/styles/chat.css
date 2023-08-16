@@ -54,6 +54,7 @@ body{
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.329);
     padding: 15px;
     
+    
 }
 
 .user-image{
@@ -113,8 +114,33 @@ body{
 
 
 
+.users-container{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(255, 255, 255, 0.295); */
+    background: linear-gradient(to bottom right, #fe549273,rgba(0, 0, 0, 0.486));
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    display: none;
+
+}
 
 
+
+.find-users-title{
+
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+.find-users-title h3{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 
 

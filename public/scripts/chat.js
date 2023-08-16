@@ -2,7 +2,8 @@
 const chatsContainer = document.getElementById('chats-container')
 const id = "64dc7398cb368bad88c221c6"
 const username = "collinsadi20"
-
+const newMessageButton = document.getElementById("new-message")
+const usersContainer = document.getElementById("users-container")
 
 
 const fetchChats = async () => {
@@ -71,3 +72,59 @@ const fetchChats = async () => {
 
 
 fetchChats()
+
+
+
+const fetchUsers = async () => {
+    
+
+    const response = await fetch("/users", {
+        method: "GET",
+        headers: {
+            "Content-Type":"application/json"
+        }
+    })
+
+    const data = await response.json()
+
+    usersContainer.innerHTML += data.users.map(user => {
+        
+        return `
+        
+        <div class="single-chat">
+
+           
+
+            <div class="user-image">
+                <img src="/images/user.jpg" alt="men">
+            </div>
+
+            <div class="chat-right">
+
+                <a href="/me/chats/${user._id}">
+                <h3>${user.usersname}</h3>
+                </a>
+
+
+            </div>
+
+        </div>
+        
+        
+        `
+
+
+    }).join("")
+
+    console.log(data)
+
+}
+
+
+
+newMessageButton.addEventListener("click", () => {
+
+    usersContainer.style.display = "block"
+    fetchUsers()
+
+})

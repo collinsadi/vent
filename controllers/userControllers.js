@@ -146,4 +146,11 @@ const reportUser = async (request, response) => {
 
 }
 
-module.exports = {createUser,loginUser,deleteUser,reportUser}
+const findAllUsers = async (request, response) => {
+    
+    const users = await User.find({ blocked: false, $and:[{_id:{$ne:request.user}}] }).sort({createdAt: -1})
+    
+    response.status(200).json({users})
+}
+
+module.exports = {createUser,loginUser,deleteUser,reportUser,findAllUsers}

@@ -14,8 +14,6 @@ const goback = () => {
     history.back()
 }
 
-
-
 const getMessages = async ()=>{
 
     const response = await fetch("/message/users/get", {

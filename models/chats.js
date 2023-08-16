@@ -4,16 +4,10 @@ const Schema = mongoose.Schema;
 
 const chatSchema = new Schema({
 
-    from: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
-    },
-    to: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
-    },
+    users: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }],
     lastmessage: {
-        type:String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "message"
     }
 
 

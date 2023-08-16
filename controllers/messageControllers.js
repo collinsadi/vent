@@ -21,22 +21,25 @@ const newMessage = async (request, response) => {
     }
 
     const newmessage = await Message.create({ from, to, message })
-    const messages = await Message.find().or([{to:from},{from}])
+    const messages = await Message.find().or([{to,from},{from:to,to:from}])
 
-    const messageId = newmessage._id
 
- const chatExists = await Chat.findOne().or([{to:from},{from}])
+
+ const chatExists = await Chat.findOne({$and:[
+      { users: { $elemMatch: { $eq: from } } },
+      { users: { $elemMatch: { $eq: to } } },
+    ]})
 
     if (chatExists) {
       
-      chatExists.lastmessage = message
+      chatExists.lastmessage = newmessage._id
 
       await chatExists.save()
     }
 
     if (!chatExists) {
       
-      const chat = await Chat.create({from, to,lastmessage:message })
+      const chat = await Chat.create({users:[from,to],lastmessage:newmessage._id })
 
       await chat.save()
     }
@@ -90,6 +93,35 @@ const deleteMessage = async (request, response) => {
 
 }
 
+
+const findUsersMessages = async (request,response) => {
+
+  const from = request.user
+  const to =  request.body.to
+
+  try{
+
+    if (!to) {
+      
+      response.status(400).json({status:false, message:"an Error Occured"})
+    }
+
+    const messages = await Message.find().or([{to,from},{from:to,to:from}]).populate("to from")
+
+    response.status(200).json({status:true, messages})
+    
+
+
+  }catch(error){
+
+    response.status(500).json({status:false, message:"Internal Server Error"})
+    console.log(error)
+  }
+
+
+}
+
+
 const getMessage = async (request, response) => {
   response.send("Route In Construction")   
 
@@ -101,4 +133,4 @@ const editMessage = async (request, response) => {
 }
 
 
-module.exports = {newMessage, deleteMessage, getMessage, editMessage}
+module.exports = {newMessage, deleteMessage, getMessage, editMessage,findUsersMessages}

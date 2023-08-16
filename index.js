@@ -15,7 +15,8 @@ const chatRoutes = require("./routes/chatRoutes")
 const pageRoutes = require("./routes/pageRoutes")
 
 
-const url = 'mongodb+srv://netninja:1020304050@cluster0.54vyixp.mongodb.net/vent?retryWrites=true&w=majority'
+const url = "mongodb://127.0.0.1:27017/vent"
+const live = 'mongodb+srv://netninja:1020304050@cluster0.54vyixp.mongodb.net/vent?retryWrites=true&w=majority'
 const port = process.env.PORT || 5000
 
 app.listen(port, () => {

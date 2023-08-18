@@ -9,7 +9,7 @@ const getChats = async (request, response) => {
 
     try{
 
-    const chats = await  Chat.find({ users: { $elemMatch: { $eq: from} } }).sort({createdAt:-1}).populate("lastmessage users")
+    const chats = await  Chat.find({ users: { $elemMatch: { $eq: from} } }).sort({updatedAt:-1}).populate("lastmessage users")
 
 
         response.status(200).json({status:true, chats})

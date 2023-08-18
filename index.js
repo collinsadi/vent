@@ -24,7 +24,7 @@ app.listen(port, () => {
     console.log("Server Started at Port 5000")
 })
 
-mongoose.connect(live, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
     
         console.log("Connected To MongoDB Sucessfully")

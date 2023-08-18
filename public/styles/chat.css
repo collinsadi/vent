@@ -53,8 +53,30 @@ body{
     margin-top: 15px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.329);
     padding: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     
     
+}
+.single-chat h3{
+    overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+}
+.single-chat p{
+    overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width:100%;
+}
+
+.chat-right{
+
+    width: 90%;
+    max-width: 90%;
+    overflow: hidden;
 }
 
 .user-image{
@@ -126,6 +148,7 @@ body{
     z-index: 100;
     backdrop-filter: blur(8px);
     display: none;
+    overflow-x: scroll;
 
 }
 

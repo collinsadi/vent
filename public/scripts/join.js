@@ -34,6 +34,7 @@ const newUser = async () => {
         setTimeout(() => {
 
             localStorage.setItem("id", data.user._id)
+            localStorage.setItem("username", data.user.usersname)
             window.location.href = "/me/chats"
             
             

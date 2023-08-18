@@ -1,6 +1,6 @@
 
 const id = localStorage.getItem("id")
-const username = "collinsadi20"
+const username = localStorage.getItem("username")
 let Name;
 const headerTitle = document.getElementById("user-name")
 

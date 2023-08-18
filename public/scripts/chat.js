@@ -1,7 +1,7 @@
 
 const chatsContainer = document.getElementById('chats-container')
-const id = "64dc7398cb368bad88c221c6"
-const username = "collinsadi20"
+const id = localStorage.getItem("id")
+const username = localStorage.getItem("username")
 const newMessageButton = document.getElementById("new-message")
 const usersContainer = document.getElementById("users-container")
 

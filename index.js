@@ -19,12 +19,12 @@ const url = "mongodb://127.0.0.1:27017/vent"
 const live = 'mongodb+srv://netninja:1020304050@cluster0.54vyixp.mongodb.net/vent?retryWrites=true&w=majority'
 const port = process.env.PORT || 5000
 
-app.listen(port, () => {
+app.listen(live, () => {
     
     console.log("Server Started at Port 5000")
 })
 
-mongoose.connect(live, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
     
         console.log("Connected To MongoDB Sucessfully")

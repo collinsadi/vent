@@ -20,7 +20,7 @@ const createUser = async (request, response) => {
             return response.status(422).json({status: false, message: "Users Password is Missing"})
         }
 
-        const userExists = await User.findOne({ usersname })
+        const userExists = await User.findOne({ usersname:usersname.toLowerCase() })
         
         if(userExists){
 
@@ -29,7 +29,7 @@ const createUser = async (request, response) => {
 
         const hashedPassword = await bcrypt.hash(password, 10)
         
-        const user = await User.create({usersname, password:hashedPassword})
+        const user = await User.create({usersname:usersname.toLowerCase(), password:hashedPassword})
 
         const token = jwt.sign({user},jwtsecret)
 

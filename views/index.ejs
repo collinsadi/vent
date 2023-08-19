@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="/styles/universalStyle.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/all.css">
+
+
+
+
 </head>
 <body>
+
+
+    <div id="popup" class="popup-container">
+
+
+        <div class="popup-content">
+
+    <h3>Seems Like You are Viewing Vent from a Laptop Device</h3>
+
+    <p>
+      If you're on a desktop or laptop, you can still use VENT, but please note that certain features might not be as responsive as they are on mobile devices.</p>
+
+      <button onclick="closePopup()">close</button>
+
+        </div>
+
+    </div>
 
    <div class="page-container">
 
@@ -30,7 +51,10 @@
 
             <a href="/join"><button>Join Chat <i class="fa-solid fa-right-to-bracket"></i> </button></a>
 
+
         </div>
+
+        <p class="warning">By Clicking <span>JOIN CHAT</span>, You agree to VENT <a href="/terms">Terms of Use and Disclaimer</a></p>
 
     </div>
 
@@ -38,5 +62,34 @@
 
     
 <script src="/scripts/all.js"></script>
+  <script>
+    // Function to open the popup
+    function openPopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "flex";
+    }
+
+    if(window.innerWidth > 680 && !localStorage.getItem("popup")){
+        openPopup()
+    }
+    
+    // Function to close the popup
+    function closePopup() {
+       document.getElementById("popup").style.display = "none"
+      
+      localStorage.setItem("popup","seen")
+    }
+
+
+    window.addEventListener("click", (e)=>{
+        if(e.target === document.getElementById("popup")){
+
+            document.getElementById("popup").style.display = "none"
+            localStorage.setItem("popup","seen")
+        }
+    })
+
+  </script>
+
 </body>
 </html>

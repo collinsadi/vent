@@ -77,5 +77,10 @@ router.get("/login", (request, response) => {
     response.render("login")
     
 })
+router.get("/terms", (request, response) => {
+
+    response.render("terms")
+    
+})
 
 module.exports = router

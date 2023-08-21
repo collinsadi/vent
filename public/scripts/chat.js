@@ -17,7 +17,7 @@ const fetchChats = async () => {
 
     const data = await response.json()
 
-    console.log(data)
+    //console.log(data)
 
     chatsContainer.innerHTML = data.chats.map(chat => {
   
@@ -116,7 +116,7 @@ const fetchUsers = async () => {
 
     }).join("")
 
-    console.log(data)
+    //console.log(data)
 
 }
 

@@ -18,7 +18,7 @@ const getChats = async (request, response) => {
     }catch(error){
 
         response.status(500).json({status:false, message:"Internal Server Error"})
-        console.log(error)
+        //console.log(error)
     }
 
 
@@ -53,7 +53,7 @@ const deleteChat = async (request, response) => {
     } catch (error) {
         
         response.status(500).json({status:false, message:"Internal Server Errror"})
-        console.log(error)
+        //console.log(error)
     }
 
 

@@ -24,7 +24,7 @@ const authRoute = (request, response,next) => {
 
 
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         response.render("login")
     }
 }
@@ -50,7 +50,7 @@ router.get("/me/chats/:id", authRoute, async (request, response) => {
 
     const id = request.params.id
 
-    console.log(id)
+    //console.log(id)
 
     try{
 
@@ -63,7 +63,7 @@ router.get("/me/chats/:id", authRoute, async (request, response) => {
 
 
     } catch (error) {
-        console.log(error)
+        //console.log(error)
          return response.redirect("/me/chats")
     }
     

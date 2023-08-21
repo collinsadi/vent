@@ -21,17 +21,17 @@ const port = process.env.PORT || 5000
 
 app.listen(port, () => {
     
-    console.log("Server Started at Port 5000")
+    //console.log("Server Started at Port 5000")
 })
 
 mongoose.connect(live, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
     
-        console.log("Connected To MongoDB Sucessfully")
+        //console.log("Connected To MongoDB Sucessfully")
     })
     .catch(error => {
     
-        console.log("Could Not Connect To MongoDB",error)
+        //console.log("Could Not Connect To MongoDB",error)
 })
 
 

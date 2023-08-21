@@ -47,7 +47,7 @@ const createUser = async (request, response) => {
     }catch(error){
 
         response.status(500).json({status: false , message: "Internal Server Error"})
-        console.log(error)
+        //console.log(error)
     }
 
 }
@@ -93,7 +93,7 @@ const loginUser = async (request, response) => {
     }catch(error){
 
         response.status(500).json({status:false, message:"Internal Server Error"})
-        console.log(error)
+        //console.log(error)
     }
     
 }
@@ -141,7 +141,7 @@ const reportUser = async (request, response) => {
     } catch (error) {
         
         response.status(500).json({status:false, message:"Internal Server Error"})
-        console.log(error)
+        //console.log(error)
     }
 
 }

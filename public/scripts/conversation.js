@@ -33,7 +33,7 @@ const getMessages = async ()=>{
 
 
 
-    console.log(data)
+    //console.log(data)
 
     if(data.messages.length > 0){
 
@@ -66,7 +66,7 @@ const getMessages = async ()=>{
     headerTitle.innerHTML = Name
     document.title = Name
 
-    console.log(Name)
+    //console.log(Name)
 
         chatContainer.scrollIntoView({behavior:"smooth",block:"end",inline:"nearest"})
 

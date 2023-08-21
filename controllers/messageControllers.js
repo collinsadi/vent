@@ -44,7 +44,7 @@ const newMessage = async (request, response) => {
       await chat.save()
     }
     
-    console.log(messages)
+    //console.log(messages)
 
     await newmessage.save()
 
@@ -53,7 +53,7 @@ const newMessage = async (request, response) => {
   }catch(error){
 
     response.status(500).json({status:false, message:"Internal Server Error"})
-    console.log(error)
+    //console.log(error)
   }
 
 
@@ -88,7 +88,7 @@ const deleteMessage = async (request, response) => {
   }catch(error){
 
     response.status(500).json({status:false, message:"Internal Server Error"})
-    console.log(error)
+    //console.log(error)
   }
 
 }
@@ -115,7 +115,7 @@ const findUsersMessages = async (request,response) => {
   }catch(error){
 
     response.status(500).json({status:false, message:"Internal Server Error"})
-    console.log(error)
+    //console.log(error)
   }
 
 

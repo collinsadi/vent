@@ -23,7 +23,7 @@ const checkLogin = async (request, response, next)=>{
 
 
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         response.status(401).json({status: false, message: "unauthorized"})
     }
 

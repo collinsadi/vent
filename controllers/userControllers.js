@@ -69,7 +69,7 @@ const loginUser = async (request, response) => {
             return response.status(422).json({status: false, message: "Users Password is Missing"})
         }
 
-        const user = await User.findOne({ usersname:usersname.toLowercase() })
+        const user = await User.findOne({ usersname:usersname.toLowerCase() })
         
         if(!user){
 
@@ -93,7 +93,7 @@ const loginUser = async (request, response) => {
     }catch(error){
 
         response.status(500).json({status:false, message:"Internal Server Error"})
-        //console.log(error)
+        console.log(error)
     }
     
 }

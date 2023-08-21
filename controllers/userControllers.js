@@ -69,7 +69,7 @@ const loginUser = async (request, response) => {
             return response.status(422).json({status: false, message: "Users Password is Missing"})
         }
 
-        const user = await User.findOne({ usersname })
+        const user = await User.findOne({ usersname:usersname.toLowercase() })
         
         if(!user){
 

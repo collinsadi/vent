@@ -61,7 +61,7 @@ const createUser = async (request, response) => {
 
 const loginUser = async (request, response) => {
 
-    const { usersname, password } = request.body
+    let { usersname, password } = request.body
     
 
     try {
@@ -74,6 +74,13 @@ const loginUser = async (request, response) => {
         if(!password){
 
             return response.status(422).json({status: false, message: "Users Password is Missing"})
+        }
+
+
+         if (usersname.split(" ").length > 0){
+
+            usersname = usersname.split(" ").join("")
+            
         }
 
         const user = await User.findOne({ usersname:usersname.toLowerCase() })

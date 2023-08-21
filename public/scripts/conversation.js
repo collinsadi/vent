@@ -9,6 +9,8 @@ const message = document.getElementById("user-message")
 
 const userId = location.href.split("/").pop()
 
+const sendButton = document.getElementById("send_btn")
+
 
 const goback = () => {
     history.back()
@@ -62,6 +64,7 @@ const getMessages = async ()=>{
     }
 
     headerTitle.innerHTML = Name
+    document.title = Name
 
     console.log(Name)
 
@@ -69,8 +72,11 @@ const getMessages = async ()=>{
 
 }
 
+
+
 const sendMessage = async () => {
 
+    
    
     
     const response = await fetch("/message/new", {
@@ -85,6 +91,7 @@ const sendMessage = async () => {
     })
 
     const data = await response.json()
+
 
     message.value = ""
 

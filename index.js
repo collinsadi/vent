@@ -19,7 +19,7 @@ const url = "mongodb://127.0.0.1:27017/vent"
 const live = 'mongodb+srv://netninja:1020304050@cluster0.54vyixp.mongodb.net/vent?retryWrites=true&w=majority'
 const port = process.env.PORT || 5000
 
-app.listen(live, () => {
+app.listen(port, () => {
     
     console.log("Server Started at Port 5000")
 })
